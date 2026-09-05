@@ -90,7 +90,7 @@ export const transportServices: TransportService[] = [
     ],
     exclusions: ["Parking fees", "Entrance tickets", "Meals", "Toll fees"],
     image:
-      "https://images.unsplash.com/photo-1568844293986-8d0400bd4745?w=800&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1748215210939-ad8b6c8c086d?w=800&h=500&fit=crop&auto=format",
     active: true,
     driverOptional: true,
     selfDrivePrice: 350000,
@@ -112,7 +112,7 @@ export const transportServices: TransportService[] = [
     ],
     exclusions: ["Parking fees", "Entrance tickets", "Meals", "Toll fees"],
     image:
-      "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&h=500&fit=crop&auto=format",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/2022_Toyota_Avanza_%28PH%29.jpg/500px-2022_Toyota_Avanza_%28PH%29.jpg",
     active: true,
     driverOptional: true,
     selfDrivePrice: 250000,
@@ -134,7 +134,7 @@ export const transportServices: TransportService[] = [
     ],
     exclusions: ["Airport parking fee (IDR 5,000)", "Gratuity"],
     image:
-      "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1748215210939-ad8b6c8c086d?w=800&h=500&fit=crop&auto=format",
     active: true,
   },
   {
@@ -159,7 +159,7 @@ export const transportServices: TransportService[] = [
     ],
     exclusions: ["Airport parking fee (IDR 5,000)", "Gratuity"],
     image:
-      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&h=500&fit=crop&auto=format",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/2022_Toyota_Avanza_%28PH%29.jpg/500px-2022_Toyota_Avanza_%28PH%29.jpg",
     active: true,
   },
   {
@@ -174,7 +174,7 @@ export const transportServices: TransportService[] = [
     inclusions: ["Driver with name board", "Air-conditioned vehicle"],
     exclusions: ["Airport parking fee (IDR 5,000)", "Gratuity"],
     image:
-      "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&h=500&fit=crop&auto=format",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/2022_Toyota_Avanza_%28PH%29.jpg/500px-2022_Toyota_Avanza_%28PH%29.jpg",
     active: true,
   },
   {
@@ -193,7 +193,7 @@ export const transportServices: TransportService[] = [
     ],
     exclusions: ["Accommodation", "National park entrance ticket", "Meals"],
     image:
-      "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1650807486050-a142ea418b19?w=800&h=500&fit=crop&auto=format",
     active: true,
   },
   {
@@ -216,7 +216,7 @@ export const transportServices: TransportService[] = [
       "Crater trekking guide",
     ],
     image:
-      "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=800&h=500&fit=crop&auto=format",
+      "https://images.unsplash.com/photo-1748215210939-ad8b6c8c086d?w=800&h=500&fit=crop&auto=format",
     active: true,
   },
 ]

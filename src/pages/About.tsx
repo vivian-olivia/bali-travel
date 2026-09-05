@@ -211,7 +211,7 @@ export default function About() {
                 ],
                 best: "Couples & small groups",
                 image:
-                  "https://images.unsplash.com/photo-1568844293986-8d0400bd4745?w=500&h=350&fit=crop&auto=format",
+                  "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/2022_Toyota_Avanza_%28PH%29.jpg/500px-2022_Toyota_Avanza_%28PH%29.jpg",
               },
               {
                 name: "Toyota Innova",
@@ -219,7 +219,7 @@ export default function About() {
                 features: ["Extra legroom", "Air-conditioning", "Large boot"],
                 best: "Families & groups",
                 image:
-                  "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=500&h=350&fit=crop&auto=format",
+                  "https://images.unsplash.com/photo-1748215210939-ad8b6c8c086d?w=500&h=350&fit=crop&auto=format",
               },
               {
                 name: "Hiace / Minibus",
@@ -231,7 +231,7 @@ export default function About() {
                 ],
                 best: "Large groups",
                 image:
-                  "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=500&h=350&fit=crop&auto=format",
+                  "https://images.unsplash.com/photo-1650807486050-a142ea418b19?w=500&h=350&fit=crop&auto=format",
               },
             ].map((vehicle, i) => (
               <div
