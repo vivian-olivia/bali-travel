@@ -1,0 +1,11 @@
+{
+  "title": "Bali Rahayu Travel",
+  "description": "Browse Bali transport and tour options with detailed info and easily book via WhatsApp for personalized service and secure reservations.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

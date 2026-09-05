@@ -1,0 +1,247 @@
+@import 'tailwindcss';
+
+/* Self-hosted — the Google Fonts CDN is blocked in some preview/sandboxed
+   environments, which silently drops these to fallback fonts (Georgia /
+   generic monospace) with very different glyph metrics than Fraunces/IBM
+   Plex Mono, breaking optical alignment between the wordmark and tagline. */
+@font-face {
+  font-family: 'Fraunces';
+  font-style: normal;
+  font-weight: 300 700;
+  font-display: swap;
+  src: url('/fonts/fraunces-variable.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Fraunces';
+  font-style: italic;
+  font-weight: 400 500;
+  font-display: swap;
+  src: url('/fonts/fraunces-variable-italic.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  font-style: normal;
+  font-weight: 400 800;
+  font-display: swap;
+  src: url('/fonts/plus-jakarta-sans-variable.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/ibm-plex-mono-600.woff2') format('woff2');
+}
+
+@theme {
+  /* Deep tropical teal — volcanic stone & night ocean, not the generic "eco-resort" green */
+  --color-forest-950: #0a211d;
+  --color-forest-900: #0e2b26;
+  --color-forest-800: #163832;
+  --color-forest-700: #1f4b43;
+  --color-forest-600: #2c6459;
+  --color-forest-500: #3f8478;
+  --color-forest-400: #62a99b;
+  --color-forest-100: #e3f1ec;
+  --color-forest-50: #f3faf7;
+
+  /* Clay / terracotta accent — temple brick & sunset, replacing generic "luxury gold" */
+  --color-gold-600: #a44d22;
+  --color-gold-500: #c15f2c;
+  --color-gold-400: #dc8a54;
+  --color-gold-100: #f7e4d3;
+
+  --color-whatsapp: #25d366;
+  --color-whatsapp-dark: #128c4a;
+
+  --color-sand: #faf6ee;
+  --color-stone-50: #f2ede0;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+
+  --radius-card: 14px;
+  --radius-btn: 8px;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  font-family: var(--font-sans);
+  background-color: var(--color-sand);
+  color: #1a1a18;
+}
+
+/* Hide scrollbar by default, show on hover/scroll */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+*:hover {
+  scrollbar-color: #d1d5db transparent;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-mono-tag {
+  font-family: var(--font-mono);
+  letter-spacing: 0.08em;
+}
+
+/* Ticket-stub perforation — the site's signature motif. A dashed seam with
+   two punched notches, standing in for the WhatsApp booking that behaves
+   like claiming a paper ticket. --notch-bg must match whatever sits behind
+   the card at each call site. */
+.ticket-divider {
+  position: relative;
+  border-top: 1.5px dashed rgba(22, 56, 50, 0.2);
+}
+.ticket-divider::before,
+.ticket-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  border-radius: 9999px;
+  background: var(--notch-bg, #faf6ee);
+}
+.ticket-divider::before {
+  left: -7px;
+}
+.ticket-divider::after {
+  right: -7px;
+}
+
+/* Smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Scroll-reveal system — driven by the Reveal component (IntersectionObserver
+   toggles .is-visible once). Only opacity/transform are animated so this
+   stays compositor-only. */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transition:
+      opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal-up {
+    transform: translateY(28px);
+  }
+  .reveal-fade {
+    transform: none;
+  }
+  .reveal-scale {
+    transform: scale(0.94);
+  }
+  .reveal.is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  @keyframes hero-fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(16px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .hero-in {
+    animation: hero-fade-up 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  @keyframes gentle-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+  .animate-float {
+    animation: gentle-float 5s ease-in-out infinite;
+  }
+
+  @keyframes soft-pulse {
+    0%,
+    100% {
+      opacity: 0.55;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0;
+      transform: scale(1.6);
+    }
+  }
+  .animate-pulse-ring {
+    animation: soft-pulse 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes panel-in {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-panel-in {
+    animation: panel-in 350ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+}
+
+@media (min-width: 1024px) {
+  @media (prefers-reduced-motion: no-preference) {
+    @keyframes panel-in {
+      from {
+        opacity: 0;
+        transform: translateX(16px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .hero-in,
+  .animate-float,
+  .animate-pulse-ring,
+  .animate-panel-in {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
